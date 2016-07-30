@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NewsStand2.0</string>
+    <string name="app_header">News Stand 2.0</string>
+
+    <string name="title_activity_web">WebActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

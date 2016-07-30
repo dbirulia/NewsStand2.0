@@ -1,0 +1,32 @@
+<!-- fragment_edit_name.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/filter_dialog"
+    android:layout_gravity="center"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <TextView
+        android:id="@+id/tvBeginDate"
+        android:text="Begin Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_margin="20dp"
+        android:layout_alignEnd="@+id/tvBeginDate"
+        android:layout_alignRight="@+id/tvBeginDate" />
+
+    <Button
+        android:layout_below="@id/etDate"
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="saveFilterOptions"
+        android:text="SAVE"
+        />
+</RelativeLayout>

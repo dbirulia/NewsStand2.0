@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".BookSearchActivity">
+    <item android:id="@+id/action_search"
+        android:orderInCategory="5"
+        android:title="SearchArticles"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView" />
+
+    <item android:id="@+id/action_filter"
+        android:orderInCategory="5"
+        android:title=""
+        app:actionLayout="@layout/action_view_filter"
+        app:showAsAction="ifRoom"
+        />
+
+</menu>
