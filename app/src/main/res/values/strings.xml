@@ -1,8 +1,33 @@
 <resources>
     <string name="app_name">NewsStand2.0</string>
     <string name="app_header">News Stand 2.0</string>
-
     <string name="title_activity_web">WebActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string-array name="order_array">
+        <item>Oldest</item>
+        <item>Newest</item>
+    </string-array>
+
+    <string-array name="news_desk_array">
+        <item>All</item>
+        <item>Arts &amp; Leisure</item>
+        <item>Automobiles</item>
+        <item>Books</item>
+        <item>Cars</item>
+        <item>Business</item>
+        <item>Education</item>
+        <item>Fashion</item>
+        <item>Financial</item>
+        <item>Home &amp; Garden</item>
+        <item>Magazine</item>
+        <item>Museums</item>
+        <item>Sports</item>
+        <item>The Natural World</item>
+        <item>Weather</item>
+        <item>World</item>
+    </string-array>
+
 </resources>
+

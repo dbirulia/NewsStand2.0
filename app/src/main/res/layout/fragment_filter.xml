@@ -3,30 +3,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/filter_dialog"
     android:layout_gravity="center"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:minWidth="400dp"
+    android:minHeight="280dp">
 
     <TextView
         android:id="@+id/tvBeginDate"
         android:text="Begin Date"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginRight="5dp"
+        android:textSize="14dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/etDate"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="text"
-        android:layout_margin="20dp"
-        android:layout_alignEnd="@+id/tvBeginDate"
-        android:layout_alignRight="@+id/tvBeginDate" />
+        android:text="2016/01/01"
+        android:layout_toRightOf="@+id/tvBeginDate" />
+
+    <TextView
+        android:id="@+id/tvOrder"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:text="Sort Order"
+        android:textSize="14dp"
+        android:layout_below="@id/tvBeginDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/sOrder"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/order_array"
+        android:layout_below="@+id/etDate"
+        android:layout_toRightOf="@id/tvOrder"/>
+
+    <TextView
+        android:id="@+id/tvDesk"
+        android:text="News Desk"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:textSize="14dp"
+        android:layout_below="@id/tvOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/sNewsDesk"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/news_desk_array"
+        android:layout_below="@+id/sOrder"
+        android:layout_toRightOf="@id/tvDesk"
+        />
 
     <Button
-        android:layout_below="@id/etDate"
         android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="saveFilterOptions"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="15dp"
         android:text="SAVE"
-        />
+        android:background="@color/save"
+        android:layout_below="@+id/sNewsDesk"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:text="CANCEL"
+        android:background="@color/cancel"
+        android:layout_below="@+id/sNewsDesk"
+        android:layout_alignParentLeft="true"/>
+
 </RelativeLayout>

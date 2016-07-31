@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.birulia.newsstand20.R;
 import com.birulia.newsstand20.WebActivity;
 import com.birulia.newsstand20.models.NewsArticle;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -94,10 +95,12 @@ public class NewsArrayAdapter extends RecyclerView.Adapter<NewsArrayAdapter.View
         viewHolder.webURL = newsArticle.getWebUrl();
 
         String imageUrl = newsArticle.getMultimediaUrl();
-//        Picasso.with(getContext()).load(imageUrl)
-//                .error(R.drawable.nyt_empty)
-//                .placeholder(R.drawable.nyt_empty)
-//                .into(ivTHumbnail);
+        Glide.with(getContext()).load(imageUrl)
+                .override(300, 200)
+                .centerCrop()
+                .error(R.drawable.nyt_empty)
+                .placeholder(R.drawable.nyt_empty)
+                .into(ivTHumbnail);
     }
 
     @Override
