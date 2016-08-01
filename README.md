@@ -54,7 +54,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-As always the biggest challenge O faced was dealing with layots
+As always the biggest challenge I faced was dealing with layots
 
 ## Open-source libraries used
 
