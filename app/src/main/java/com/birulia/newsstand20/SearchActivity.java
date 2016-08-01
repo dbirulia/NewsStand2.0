@@ -2,6 +2,8 @@ package com.birulia.newsstand20;
 
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.databinding.DataBindingUtil;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.MenuItemCompat;
@@ -15,8 +17,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.birulia.newsstand20.adapters.NewsArrayAdapter;
+import com.birulia.newsstand20.databinding.ActivitySearchBinding;
 import com.birulia.newsstand20.fragments.FilterDialogFragment;
 import com.birulia.newsstand20.models.NewsArticle;
 import com.birulia.newsstand20.net.NewsClient;
@@ -42,8 +46,8 @@ public class SearchActivity extends AppCompatActivity implements DialogInterface
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
-//        ActivitySearchBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_search);
+//        setContentView(R.layout.activity_search);
+        ActivitySearchBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_search);
 
         // Find the toolbar view inside the activity layout
         Toolbar toolbar = (Toolbar) findViewById(R.id.search_bar);
@@ -78,7 +82,7 @@ public class SearchActivity extends AppCompatActivity implements DialogInterface
         editor.putString("q", "");
         editor.putString("start_date", "");
         editor.putString("sort", "");
-        editor.putString("news_deck", "");
+        editor.putString("news_desk", "");
         editor.apply();
 
         fetchNews(0);
@@ -114,6 +118,12 @@ public class SearchActivity extends AppCompatActivity implements DialogInterface
             }
         });
 
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/newyorktimes.ttf");
+        Toolbar toolbar = (Toolbar) findViewById(R.id.search_bar);
+        TextView tvTitle = (TextView) toolbar.getChildAt(0);
+        tvTitle.setTextSize(32);
+        tvTitle.setTypeface(custom_font);
+
         // Set up Filter Action
         MenuItem filterItem = menu.findItem(R.id.action_filter);
         MenuItemCompat.getActionView(filterItem).setOnClickListener(new View.OnClickListener(){
@@ -141,7 +151,7 @@ public class SearchActivity extends AppCompatActivity implements DialogInterface
         String query = mSettings.getString("q", "");
         String startDate = mSettings.getString("start_date", "");
         String sortOrder = mSettings.getString("sort", "");
-        String newsDeck = mSettings.getString("news_deck", "");
+        String newsDeck = mSettings.getString("news_desk", "");
         client.getNews(query, page, startDate, sortOrder, newsDeck, new TextHttpResponseHandler() {
 
             @Override

@@ -18,9 +18,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NewsDetailsActivity"
-            android:label="NewsDetailsActivity"></activity>
-        <activity
             android:name=".WebActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_web"

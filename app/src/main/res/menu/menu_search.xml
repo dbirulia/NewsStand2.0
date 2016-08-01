@@ -1,6 +1,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".BookSearchActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SearchActivity">
+
+
     <item android:id="@+id/action_search"
         android:orderInCategory="5"
         android:title="SearchArticles"
@@ -9,7 +12,7 @@
         app:actionViewClass="android.support.v7.widget.SearchView" />
 
     <item android:id="@+id/action_filter"
-        android:orderInCategory="5"
+        android:orderInCategory="6"
         android:title=""
         app:actionLayout="@layout/action_view_filter"
         app:showAsAction="ifRoom"

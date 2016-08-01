@@ -85,11 +85,7 @@ public class NewsArrayAdapter extends RecyclerView.Adapter<NewsArrayAdapter.View
         NewsArticle newsArticle = newsArticles.get(position);
         // Set item views based on your views and data model
         TextView tvTitle = viewHolder.tvTitle;
-
         String headLine = newsArticle.getHeadline();
-        if (headLine.length() > 40){
-            trimHeadline(headLine, 40);
-        }
         tvTitle.setText(newsArticle.getHeadline());
         ImageView ivTHumbnail = viewHolder.ivThumbnail;
         viewHolder.webURL = newsArticle.getWebUrl();
@@ -98,8 +94,8 @@ public class NewsArrayAdapter extends RecyclerView.Adapter<NewsArrayAdapter.View
         Glide.with(getContext()).load(imageUrl)
                 .override(300, 200)
                 .centerCrop()
-                .error(R.drawable.nyt_empty)
-                .placeholder(R.drawable.nyt_empty)
+                .error(R.drawable.nyt_empty_small)
+                .placeholder(R.drawable.nyt_empty_small)
                 .into(ivTHumbnail);
     }
 

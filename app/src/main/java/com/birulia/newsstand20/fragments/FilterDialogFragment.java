@@ -115,7 +115,7 @@ public class FilterDialogFragment extends DialogFragment {
                                        public void onClick(View v) {
                                             SharedPreferences mSettings = getActivity().getSharedPreferences(Constants.SHARED_SEARCH_SETTINGS, 0);
                                             SharedPreferences.Editor editor = mSettings.edit();
-                                            editor.putString("begin_date", getBeginDate());
+                                            editor.putString("start_date", getBeginDate());
                                             editor.putString("sort", getSortOrder());
                                             editor.putString("news_desk", getNewsDesk());
                                             editor.apply();
