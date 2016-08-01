@@ -18,6 +18,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.birulia.newsstand20.adapters.NewsArrayAdapter;
 import com.birulia.newsstand20.databinding.ActivitySearchBinding;
@@ -30,6 +31,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
@@ -47,7 +49,7 @@ public class SearchActivity extends AppCompatActivity implements DialogInterface
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_search);
 
         // Find the toolbar view inside the activity layout
@@ -85,6 +87,12 @@ public class SearchActivity extends AppCompatActivity implements DialogInterface
         editor.putString("sort", "");
         editor.putString("news_desk", "");
         editor.apply();
+
+        if (isOnline() != true){
+            String error_msg = "Sorry your are not connected to Interent";
+            Toast toast=Toast.makeText(getApplicationContext(),error_msg,Toast.LENGTH_SHORT);
+            toast.show();
+        }
 
         fetchNews(0);
     }
@@ -187,5 +195,16 @@ public class SearchActivity extends AppCompatActivity implements DialogInterface
         newsArticles.clear();
         newsAdapter.notifyDataSetChanged();
         fetchNews(0);
+    }
+
+    public boolean isOnline() {
+        Runtime runtime = Runtime.getRuntime();
+        try {
+            Process ipProcess = runtime.exec("/system/bin/ping -c 1 8.8.8.8");
+            int     exitValue = ipProcess.waitFor();
+            return (exitValue == 0);
+        } catch (IOException e)          { e.printStackTrace(); }
+        catch (InterruptedException e) { e.printStackTrace(); }
+        return false;
     }
 }
