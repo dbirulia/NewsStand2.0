@@ -40,14 +40,15 @@ public class SearchActivity extends AppCompatActivity implements DialogInterface
     private NewsArrayAdapter newsAdapter;
     private RecyclerView rvNewsArticles;
     private static final Integer NUMBER_OF_COLUMNS = 3;
-    SharedPreferences mSettings;
+    private ActivitySearchBinding binding;
+    private SharedPreferences mSettings;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_search);
-        ActivitySearchBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_search);
+        
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_search);
 
         // Find the toolbar view inside the activity layout
         Toolbar toolbar = (Toolbar) findViewById(R.id.search_bar);
@@ -57,7 +58,7 @@ public class SearchActivity extends AppCompatActivity implements DialogInterface
 
         newsArticles = new ArrayList<>();
         newsAdapter = new NewsArrayAdapter(this, newsArticles);
-        rvNewsArticles = (RecyclerView) findViewById(R.id.rvNewsArticles);
+        rvNewsArticles = binding.rvNewsArticles;
         // Attach the adapter to the recyclerview to populate items
         rvNewsArticles.setAdapter(newsAdapter);
         // Set layout manager to position the items
