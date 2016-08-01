@@ -1,4 +1,4 @@
-# Project 2 - *Name of App Here*
+# Project 2 - *News Stand 2.0*
 
 **Name of your app** is an android app that allows a user to search for articles on web using simple filters. The app utilizes [New York Times Search API](http://developer.nytimes.com/docs/read/article_search_api_v2).
 
